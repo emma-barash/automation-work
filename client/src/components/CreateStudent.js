@@ -1,8 +1,8 @@
 import React from 'react';
 import { 
     AddStudent,
-    // RentalCheckbox,
-    // Rentals
+    RentalCheckbox,
+    Rentals
  } from '../elements/index.js';
 
 const CreateStudent = props => {
@@ -19,8 +19,8 @@ const CreateStudent = props => {
                 <input onChange={handleChange} name="cohort"        value={inputs.cohort }      />
                 <p>Instructor:</p>
                 <input onChange={handleChange} name="instructor"    value={inputs.instructor }  />
-                {/* <Rentals>Rentals: </Rentals>    <RentalCheckbox  type="checkbox"   value="checked" name="rentals" /><br/>
-                <Rentals>Owing:   </Rentals>    <RentalCheckbox  type="checkbox"   value="checked" name="owing"   /><br/> */}
+                <Rentals>Rentals: </Rentals>    <RentalCheckbox  type="checkbox"   value="" name="rentals" onChange={ handleChange }/><br/>
+                <Rentals>Owing:   </Rentals>    <RentalCheckbox  type="checkbox"   value="" name="owing"   onChange={ handleChange }/><br/>
                 <AddStudent>{isEdit ? 'Update Info' : 'Create Student'}</AddStudent>
                 {isEdit && <AddStudent>Cancel</AddStudent>}
             </form>

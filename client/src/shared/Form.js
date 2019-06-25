@@ -9,7 +9,10 @@ class Form extends Component{
     };
 
     handleChange = e => {
-        const { name, value } = e.target;
+        const { name, value, checked } = e.target;
+        if(checked){
+            console.log(checked)
+        }
         this.setState(ps => ({ 
             inputs : {
             ...ps.inputs,
