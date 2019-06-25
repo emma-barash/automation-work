@@ -8,3 +8,12 @@ export const ToDetailName = styled.h3`
         cursor: pointer;
     }
 `;
+
+export const FormTitle = styled(ToDetailName)`
+    margin: 40px auto auto auto ;
+`;
+
+export const Rentals = styled.p`
+    color: white;
+    display: inline;
+`;

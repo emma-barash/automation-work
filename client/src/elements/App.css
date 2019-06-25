@@ -29,20 +29,9 @@ form, input, button{
     border-radius: 10px;
     text-align: center;
 }
-button{
-    background-color: rgb(31, 29, 29);
-    color: white;
-    font-family: sans-serif;
-    padding: 8px;
-    border: none;
-    font-size: 15px;
-}
-input, button:focus{
+
+input:focus{
     outline: none;
 }
-button:hover{
-    color: rgb(238, 119, 23);
-    border: 2px solid goldenrod;
-    cursor: pointer;
-}
+
 

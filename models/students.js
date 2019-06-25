@@ -16,6 +16,12 @@ const Schema = mongoose.Schema;
      instructor: {
         type: String
      },
+    //  rentals: {
+    //     type: Boolean
+    //  },
+    //  owing:{
+    //     type: Boolean
+    //  },
      time: {
          type: Date,
          defualt: Date.now

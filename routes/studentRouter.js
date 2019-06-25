@@ -24,8 +24,9 @@ studentRouter.post('/', (req, res, next) => {
     });
 });
 
-studentRouter.delete('/:id', (req, res, next) => {
-    Student.findByIdAndRemove((err, deletedStudent) => {
+studentRouter.delete('/:_id', (req, res, next) => {
+    Student.findOneAndRemove({ _id: req.params._id }, 
+        (err, deletedStudent) => {
         if(err){
             res.status(500);
             return next(err);
@@ -34,8 +35,8 @@ studentRouter.delete('/:id', (req, res, next) => {
     });
 });
 
-studentRouter.put('/:id', (req, res, next) => {
-    Student.findByIdAndUpdate({ id: req.params.id }, req.body, (err, updatedStudent) => {
+studentRouter.put('/_:id', (req, res, next) => {
+    Student.findByIdAndUpdate({ _id: req.params.id }, req.body, (err, updatedStudent) => {
         if(err){
             res.status(500);
             return next(err);

@@ -1,11 +1,15 @@
 import React from 'react';
+import { 
+    AddStudent,
+    RentalCheckbox,
+    Rentals
+ } from '../elements/index.js';
 
 const CreateStudent = props => {
     // console.log(props)
     const { handleChange, handleSubmit, inputs } = props
     return (
         <div>
-            <p>Student creation form here</p>
             <form onSubmit={handleSubmit}>
                 <p>First Name:</p>
                 <input onChange={handleChange} name="firstName"     value={inputs.firstName }   />
@@ -15,7 +19,9 @@ const CreateStudent = props => {
                 <input onChange={handleChange} name="cohort"        value={inputs.cohort }      />
                 <p>Instructor:</p>
                 <input onChange={handleChange} name="instructor"    value={inputs.instructor }  />
-                <button>Create Student</button>
+                {/* <Rentals>Rentals: </Rentals>    <RentalCheckbox  type="checkbox"   value="checked" name="rentals" /><br/>
+                <Rentals>Owing:   </Rentals>    <RentalCheckbox  type="checkbox"   value="checked" name="owing"   /><br/> */}
+                <AddStudent>Create Student</AddStudent>
             </form>
         </div>
     );
