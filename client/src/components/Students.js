@@ -59,7 +59,7 @@ class Students extends Component {
             <StudentContainer>
                 { mappedStudents }
                 </StudentContainer>
-                <FormTitle onClick={this.handleCheckbox} >Student Creation Form</FormTitle>
+                <FormTitle onClick={this.handleCheckbox}>Create A Student</FormTitle>
                 { this.state.addStudent ?
                 <Form
                     inputs={{ firstName: '', lastName: '', cohort: '', instructor: '', rentals: '', owing: '' }}

@@ -5,5 +5,6 @@ export const StudentCard = styled.div`
     border: 1px solid goldenrod;
     border-radius: 20px;
     padding: 20px 40px;
-    margin: 10px;
+    margin: 15px;
+    box-shadow: 0 0 10px goldenrod;
 `;
