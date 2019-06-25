@@ -35,8 +35,10 @@ studentRouter.delete('/:_id', (req, res, next) => {
     });
 });
 
-studentRouter.put('/_:id', (req, res, next) => {
-    Student.findByIdAndUpdate({ _id: req.params.id }, req.body, (err, updatedStudent) => {
+studentRouter.put('/:_id', (req, res, next) => {
+    Student.findByIdAndUpdate({ _id: req.params._id }, 
+        req.body, 
+        (err, updatedStudent) => {
         if(err){
             res.status(500);
             return next(err);

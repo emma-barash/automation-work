@@ -1,13 +1,13 @@
 import React from 'react';
 import { 
     AddStudent,
-    RentalCheckbox,
-    Rentals
+    // RentalCheckbox,
+    // Rentals
  } from '../elements/index.js';
 
 const CreateStudent = props => {
     // console.log(props)
-    const { handleChange, handleSubmit, inputs } = props
+    const { handleChange, handleSubmit, inputs, isEdit } = props
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -21,7 +21,8 @@ const CreateStudent = props => {
                 <input onChange={handleChange} name="instructor"    value={inputs.instructor }  />
                 {/* <Rentals>Rentals: </Rentals>    <RentalCheckbox  type="checkbox"   value="checked" name="rentals" /><br/>
                 <Rentals>Owing:   </Rentals>    <RentalCheckbox  type="checkbox"   value="checked" name="owing"   /><br/> */}
-                <AddStudent>Create Student</AddStudent>
+                <AddStudent>{isEdit ? 'Update Info' : 'Create Student'}</AddStudent>
+                {isEdit && <AddStudent>Cancel</AddStudent>}
             </form>
         </div>
     );

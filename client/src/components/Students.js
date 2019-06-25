@@ -14,7 +14,8 @@ class Students extends Component {
         this.state = {
             allStudents: [],
             isEdit: false,
-            addStudent: false
+            addStudent: false,
+            updateStudent: {}
         }
     }
 
@@ -45,7 +46,21 @@ class Students extends Component {
             addStudent: !ps.addStudent
         }));
     };
+
+    studentToUpdate = id => {
+        const update = this.state.allStudents.find(student => id === student._id);
+        this.setState(ps => ({ updateStudent: { ...update }, isEdit: !ps.isEdit }))
+    }   
      
+    updateStudent = updateThisStudent => {
+        console.log(updateThisStudent)
+        axios.put(`/student/${this.state.updateStudent._id}`, updateThisStudent)
+        .then(res => {
+            console.log(res.data);
+            this.getStudents();
+        })
+        this.setState(ps => ({ isEdit: !ps.isEdit }))
+    }
 
     componentDidMount() {
         this.getStudents();
@@ -59,8 +74,8 @@ class Students extends Component {
             <StudentContainer>
                 { mappedStudents }
                 </StudentContainer>
-                <FormTitle onClick={this.handleCheckbox}>Create A Student</FormTitle>
-                { this.state.addStudent ?
+                <FormTitle onClick={this.handleCheckbox}>Create Student Form</FormTitle>
+                { this.state.addStudent && !this.state.isEdit ?
                 <Form
                     inputs={{ firstName: '', lastName: '', cohort: '', instructor: '', rentals: '', owing: '' }}
                     submit={ inputs => this.createStudent(inputs) }
@@ -68,6 +83,15 @@ class Students extends Component {
                 />
                 :
                 null
+                };
+                {this.state.isEdit ?
+                    <Form
+                    inputs={{ firstName: this.state.updateStudent.firstName, lastName: this.state.updateStudent.lastName, cohort: this.state.updateStudent.cohort, instructor: this.state.updateStudent.instructor, rentals: this.state.updateStudent.rentals, owing: this.state.updateStudent.owing }}
+                    submit={ inputs => this.updateStudent(inputs) }
+                    render={ formProps => <CreateStudent { ...formProps } { ...this.state } />}
+                />
+                    :
+                    null
                 }
             </div>
         );

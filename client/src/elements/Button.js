@@ -11,7 +11,7 @@ export const AddStudent = styled.button`
         color: rgb(238, 119, 23);
         border: 2px solid goldenrod;
         cursor: pointer;
-        padding: 4px;
+        padding: 5px;
     }
     &:focus{
         outline: none;
