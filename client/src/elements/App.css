@@ -35,6 +35,7 @@ button{
     font-family: sans-serif;
     padding: 8px;
     border: none;
+    font-size: 15px;
 }
 input, button:focus{
     outline: none;
@@ -42,5 +43,6 @@ input, button:focus{
 button:hover{
     color: rgb(238, 119, 23);
     border: 2px solid goldenrod;
+    cursor: pointer;
 }
 

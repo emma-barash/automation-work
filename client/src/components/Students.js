@@ -3,6 +3,7 @@ import Form from '../shared/Form.js';
 import axios from 'axios';
 import CreateStudent from './CreateStudent.js';
 import AllStudents from './AllStudents.js';
+import { StudentContainer } from '../elements/index.js';
 
 class Students extends Component {
     constructor(props) {
@@ -37,7 +38,9 @@ class Students extends Component {
         return (
             <div>
                 <p>Display Students</p>
+            <StudentContainer>
                 { mappedStudents }
+                </StudentContainer>
                 <p>Add a Student:</p>
                 <Form
                     inputs={{ firstName: '', lastName: '', cohort: '', instructor: '' }}

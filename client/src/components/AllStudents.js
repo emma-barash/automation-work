@@ -1,14 +1,17 @@
 import React from 'react';
+import { 
+    StudentCard,
+    ToDetailName 
+} from '../elements/index.js';
 
 const AllStudents = props => {
     const { firstName, lastName, cohort, instructor } = props;
     return (
-        <div>
-            <p>{ firstName }</p>
-            <p>{ lastName }</p>
-            <p>{ cohort }</p>
-            <p>{ instructor }</p>
-        </div>
+        <StudentCard>
+            <ToDetailName>{ firstName } { lastName }</ToDetailName>
+            <p>cohort: { cohort }</p>
+            <p>instructor: { instructor }</p>
+        </StudentCard>
     );
 };
 
