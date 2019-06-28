@@ -4,14 +4,16 @@ class Form extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            inputs: this.props.inputs
+            inputs: this.props.inputs,
+            checked: false
         };
     };
 
     handleChange = e => {
+        console.log(e.target)
         const { name, value, checked } = e.target;
         if(checked){
-            console.log(checked)
+            this.setState(ps => ({ checked: !ps.checked }))
         }
         this.setState(ps => ({ 
             inputs : {
@@ -30,6 +32,7 @@ class Form extends Component{
     render() {
         return this.props.render({
             inputs: this.state.inputs,
+            checked: this.state.checked,
             handleChange: this.handleChange,
             handleSubmit: this.handleSubmit
         })

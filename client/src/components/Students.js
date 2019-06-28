@@ -77,7 +77,8 @@ class Students extends Component {
                 <FormTitle onClick={this.handleCheckbox}>Create Student Form</FormTitle>
                 { this.state.addStudent && !this.state.isEdit ?
                 <Form
-                    inputs={{ firstName: '', lastName: '', cohort: '', instructor: '', rentals: '', owing: '' }}
+                    // inputs={{ firstName: '', lastName: '', cohort: '', instructor: '', rentals: this.props.checked, owing: this.props.checked }}
+                    inputs={{ firstName: '', lastName: '', cohort: '', instructor: '' }}
                     submit={ inputs => this.createStudent(inputs) }
                     render={ formProps => <CreateStudent { ...formProps } { ...this.state } />}
                 />
