@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 import { 
     StudentCard,
     ToDetailName,
@@ -11,7 +13,7 @@ const AllStudents = props => {
      console.log(rentals)
     return (
         <StudentCard>
-            <ToDetailName>{ firstName } { lastName }</ToDetailName>
+            <ToDetailName><Link className="studentLink" to="studentDetail">{ firstName } { lastName }</Link></ToDetailName>
             <p>cohort: { cohort }</p>
             <p>instructor: { instructor }</p>
             <p>{rentals ? 

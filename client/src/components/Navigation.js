@@ -9,6 +9,7 @@ const Navigation = () => {
             <Link className="link" to="/">Home</Link>
             <Link className="link" to="/students">Students</Link>
             <Link className="link" to="/rentals">Rentals</Link>
+            <Link className="link" to="/housing">Housing</Link>
         </NavRibbon>
     )
 }

@@ -4,3 +4,4 @@ export * from './StudentCard.js';
 export * from './Titles.js';
 export * from './Button.js';
 export * from './CheckBox.js';
+export * from './Image.js';

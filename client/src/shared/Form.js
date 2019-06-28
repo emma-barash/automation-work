@@ -5,20 +5,18 @@ class Form extends Component{
         super(props);
         this.state = {
             inputs: this.props.inputs,
-            checked: false
+            // checked: false
         };
     };
 
     handleChange = e => {
         console.log(e.target)
-        const { name, value, checked } = e.target;
-        if(checked){
-            this.setState(ps => ({ checked: !ps.checked }))
-        }
+        const { type, checked, value, name } = e.target;
+        const val = type === 'checkbox' ? checked : value
         this.setState(ps => ({ 
             inputs : {
             ...ps.inputs,
-            [name]: value 
+            [name]: val
             }
         }));
     };
